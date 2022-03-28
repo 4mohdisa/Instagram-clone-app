@@ -8,11 +8,9 @@
       rel="shortcut icon"
       href="https://www.freepnglogos.com/uploads/logo-ig-png/logo-ig-instagram-new-logo-vector-download-13.png"
     />
-    <link rel="stylesheet" href="/styles/explore.css" />
+    <link rel="stylesheet" href="/styles/inbox.css" />
     <script src="/scripts/profile.js" defer></script>
-    <script src="/scripts/unsplash.js" defer></script>
-
-    <title id="title">Instagram</title>
+    <title>Inbox · Chats</title>
   </head>
   <body>
     <div class="back-bg" id="back-bg"></div>
@@ -712,162 +710,668 @@
       </div>
     </div>
     <main>
-      <!-- Loader -->
-      <div class="loader" id="loader">
-        <svg
-          width="2.5rem"
-          height="2.5rem"
-          aria-label="Loading..."
-          class="By4nA"
-          viewBox="0 0 100 100"
-        >
-          <rect
-            fill="#555555"
-            height="6"
-            opacity="0"
-            rx="3"
-            ry="3"
-            transform="rotate(-90 50 50)"
-            width="25"
-            x="72"
-            y="47"
-          ></rect>
-          <rect
-            fill="#555555"
-            height="6"
-            opacity="0.08333333333333333"
-            rx="3"
-            ry="3"
-            transform="rotate(-60 50 50)"
-            width="25"
-            x="72"
-            y="47"
-          ></rect>
-          <rect
-            fill="#555555"
-            height="6"
-            opacity="0.16666666666666666"
-            rx="3"
-            ry="3"
-            transform="rotate(-30 50 50)"
-            width="25"
-            x="72"
-            y="47"
-          ></rect>
-          <rect
-            fill="#555555"
-            height="6"
-            opacity="0.25"
-            rx="3"
-            ry="3"
-            transform="rotate(0 50 50)"
-            width="25"
-            x="72"
-            y="47"
-          ></rect>
-          <rect
-            fill="#555555"
-            height="6"
-            opacity="0.3333333333333333"
-            rx="3"
-            ry="3"
-            transform="rotate(30 50 50)"
-            width="25"
-            x="72"
-            y="47"
-          ></rect>
-          <rect
-            fill="#555555"
-            height="6"
-            opacity="0.4166666666666667"
-            rx="3"
-            ry="3"
-            transform="rotate(60 50 50)"
-            width="25"
-            x="72"
-            y="47"
-          ></rect>
-          <rect
-            fill="#555555"
-            height="6"
-            opacity="0.5"
-            rx="3"
-            ry="3"
-            transform="rotate(90 50 50)"
-            width="25"
-            x="72"
-            y="47"
-          ></rect>
-          <rect
-            fill="#555555"
-            height="6"
-            opacity="0.5833333333333334"
-            rx="3"
-            ry="3"
-            transform="rotate(120 50 50)"
-            width="25"
-            x="72"
-            y="47"
-          ></rect>
-          <rect
-            fill="#555555"
-            height="6"
-            opacity="0.6666666666666666"
-            rx="3"
-            ry="3"
-            transform="rotate(150 50 50)"
-            width="25"
-            x="72"
-            y="47"
-          ></rect>
-          <rect
-            fill="#555555"
-            height="6"
-            opacity="0.75"
-            rx="3"
-            ry="3"
-            transform="rotate(180 50 50)"
-            width="25"
-            x="72"
-            y="47"
-          ></rect>
-          <rect
-            fill="#555555"
-            height="6"
-            opacity="0.8333333333333334"
-            rx="3"
-            ry="3"
-            transform="rotate(210 50 50)"
-            width="25"
-            x="72"
-            y="47"
-          ></rect>
-          <rect
-            fill="#555555"
-            height="6"
-            opacity="0.9166666666666666"
-            rx="3"
-            ry="3"
-            transform="rotate(240 50 50)"
-            width="25"
-            x="72"
-            y="47"
-          ></rect>
-        </svg>
-      </div>
-
-      <!-- Error Message -->
-      <div class="error" id="error" hidden>
-        <div class="error__msg">
-          <p class="error__msg-text">
-            Oops! Something went wrong. The API rate limit may have been
-            exceeded. Please try again later.
-          </p>
+      <section>
+        <div class="grid">
+          <div class="chat-list">
+            <div class="account">
+              <div
+                class="account-name"
+                id="accountSWITCH"
+                onclick="switchAccount()"
+              >
+                <%= name %>
+                <span>
+                  <svg
+                    aria-label="Down Chevron Icon"
+                    class="_8-yf5"
+                    color="#262626"
+                    fill="#262626"
+                    height="20"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    width="20"
+                  >
+                    <path
+                      d="M21 17.502a.997.997 0 01-.707-.293L12 8.913l-8.293 8.296a1 1 0 11-1.414-1.414l9-9.004a1.03 1.03 0 011.414 0l9 9.004A1 1 0 0121 17.502z"
+                    ></path>
+                  </svg>
+                </span>
+              </div>
+              <a class="edit" onclick="newMessage()">
+                <svg
+                  aria-label="New Message"
+                  class="_8-yf5"
+                  color="#262626"
+                  fill="#262626"
+                  height="24"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="24"
+                >
+                  <path
+                    d="M12.202 3.203H5.25a3 3 0 00-3 3V18.75a3 3 0 003 3h12.547a3 3 0 003-3v-6.952"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                  ></path>
+                  <path
+                    d="M10.002 17.226H6.774v-3.228L18.607 2.165a1.417 1.417 0 012.004 0l1.224 1.225a1.417 1.417 0 010 2.004z"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                  ></path>
+                  <line
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    x1="16.848"
+                    x2="20.076"
+                    y1="3.924"
+                    y2="7.153"
+                  ></line>
+                </svg>
+              </a>
+            </div>
+            <div class="account-list">
+              <ul>
+                <li class="single-account">
+                  <div class="account-img">
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Elon_Musk_Royal_Society_%28crop2%29.jpg/330px-Elon_Musk_Royal_Society_%28crop2%29.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="account-info">
+                    <h4>
+                      Elon Musk
+                      <img
+                        alt="verified"
+                        class="d2edcug0 sf5mxxl7"
+                        referrerpolicy="origin-when-cross-origin"
+                        src="https://static.xx.fbcdn.net/assets/?revision=1457375664716516&amp;name=ig-verifiedbadge-shared&amp;density=1"
+                        style="user-select: auto"
+                      />
+                    </h4>
+                    <p>Wanna Work In my Company?</p>
+                  </div>
+                </li>
+                <li class="single-account">
+                  <div class="account-img">
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Jeff_Bezos_at_Amazon_Spheres_Grand_Opening_in_Seattle_-_2018_%2839074799225%29_%28cropped%29.jpg/638px-Jeff_Bezos_at_Amazon_Spheres_Grand_Opening_in_Seattle_-_2018_%2839074799225%29_%28cropped%29.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="account-info">
+                    <h4>
+                      Jeff Bezos
+                      <img
+                        alt="verified"
+                        class="d2edcug0 sf5mxxl7"
+                        referrerpolicy="origin-when-cross-origin"
+                        src="https://static.xx.fbcdn.net/assets/?revision=1457375664716516&amp;name=ig-verifiedbadge-shared&amp;density=1"
+                        style="user-select: auto"
+                      />
+                    </h4>
+                    <p>My company need you</p>
+                  </div>
+                </li>
+                <li class="single-account">
+                  <div class="account-img">
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Bernard_Arnault_%283%29_-_2017_%28cropped%29.jpg/688px-Bernard_Arnault_%283%29_-_2017_%28cropped%29.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="account-info">
+                    <h4>
+                      Bernard Arnault
+                      <img
+                        alt="verified"
+                        class="d2edcug0 sf5mxxl7"
+                        referrerpolicy="origin-when-cross-origin"
+                        src="https://static.xx.fbcdn.net/assets/?revision=1457375664716516&amp;name=ig-verifiedbadge-shared&amp;density=1"
+                        style="user-select: auto"
+                      />
+                    </h4>
+                    <p>I need some help in webdevelopment</p>
+                  </div>
+                </li>
+                <li class="single-account">
+                  <div class="account-img">
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Bill_Gates_2017_%28cropped%29.jpg/330px-Bill_Gates_2017_%28cropped%29.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="account-info">
+                    <h4>
+                      Bill Gates
+                      <img
+                        alt="verified"
+                        class="d2edcug0 sf5mxxl7"
+                        referrerpolicy="origin-when-cross-origin"
+                        src="https://static.xx.fbcdn.net/assets/?revision=1457375664716516&amp;name=ig-verifiedbadge-shared&amp;density=1"
+                        style="user-select: auto"
+                      />
+                    </h4>
+                    <p>You're awesome</p>
+                  </div>
+                </li>
+                <li class="single-account">
+                  <div class="account-img">
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Larry_Page_in_the_European_Parliament%2C_17.06.2009_%28cropped%29.jpg/330px-Larry_Page_in_the_European_Parliament%2C_17.06.2009_%28cropped%29.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="account-info">
+                    <h4>
+                      Larry Page
+                      <img
+                        alt="verified"
+                        class="d2edcug0 sf5mxxl7"
+                        referrerpolicy="origin-when-cross-origin"
+                        src="https://static.xx.fbcdn.net/assets/?revision=1457375664716516&amp;name=ig-verifiedbadge-shared&amp;density=1"
+                        style="user-select: auto"
+                      />
+                    </h4>
+                    <p>Work in my company I'll give you 200k a month</p>
+                  </div>
+                </li>
+                <li class="single-account">
+                  <div class="account-img">
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Warren_Buffett_at_the_2015_SelectUSA_Investment_Summit_%28cropped%29.jpg/330px-Warren_Buffett_at_the_2015_SelectUSA_Investment_Summit_%28cropped%29.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="account-info">
+                    <h4>
+                      Warren Buffett
+                      <img
+                        alt="verified"
+                        class="d2edcug0 sf5mxxl7"
+                        referrerpolicy="origin-when-cross-origin"
+                        src="https://static.xx.fbcdn.net/assets/?revision=1457375664716516&amp;name=ig-verifiedbadge-shared&amp;density=1"
+                        style="user-select: auto"
+                      />
+                    </h4>
+                    <p>Buy my company</p>
+                  </div>
+                </li>
+                <li class="single-account">
+                  <div class="account-img">
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Emma_Watson_2013.jpg/330px-Emma_Watson_2013.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="account-info">
+                    <h4>
+                      emma watson
+                      <img
+                        alt="verified"
+                        class="d2edcug0 sf5mxxl7"
+                        referrerpolicy="origin-when-cross-origin"
+                        src="https://static.xx.fbcdn.net/assets/?revision=1457375664716516&amp;name=ig-verifiedbadge-shared&amp;density=1"
+                        style="user-select: auto"
+                      />
+                    </h4>
+                    <p>You're hot!!</p>
+                  </div>
+                </li>
+                <li class="single-account">
+                  <div class="account-img">
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Kylie_Jenner_in_2021.jpg/330px-Kylie_Jenner_in_2021.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="account-info">
+                    <h4>
+                      Kylie Jenner
+                      <img
+                        alt="verified"
+                        class="d2edcug0 sf5mxxl7"
+                        referrerpolicy="origin-when-cross-origin"
+                        src="https://static.xx.fbcdn.net/assets/?revision=1457375664716516&amp;name=ig-verifiedbadge-shared&amp;density=1"
+                        style="user-select: auto"
+                      />
+                    </h4>
+                    <p>Wanna go out?</p>
+                  </div>
+                </li>
+                <li class="single-account">
+                  <div class="account-img">
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Dwayne_Johnson_2014_%28cropped%29.jpg/330px-Dwayne_Johnson_2014_%28cropped%29.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="account-info">
+                    <h4>
+                      therock
+                      <img
+                        alt="verified"
+                        class="d2edcug0 sf5mxxl7"
+                        referrerpolicy="origin-when-cross-origin"
+                        src="https://static.xx.fbcdn.net/assets/?revision=1457375664716516&amp;name=ig-verifiedbadge-shared&amp;density=1"
+                        style="user-select: auto"
+                      />
+                    </h4>
+                    <p>It's about time it's about power</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="chat-inbox">
+            <div class="Send-mssg">
+              <svg
+                aria-label="Share Post"
+                class="_8-yf5"
+                color="#262626"
+                fill="#262626"
+                height="74"
+                role="img"
+                viewBox="0 0 24 24"
+                width="74"
+              >
+                <line
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linejoin="round"
+                  stroke-width="1"
+                  x1="22"
+                  x2="9.218"
+                  y1="3"
+                  y2="10.083"
+                ></line>
+                <polygon
+                  fill="none"
+                  points="11.698 20.334 22 3.001 2 3.001 9.218 10.084 11.698 20.334"
+                  stroke="currentColor"
+                  stroke-linejoin="round"
+                  stroke-width="1"
+                ></polygon>
+              </svg>
+              <h3>Your Messages</h3>
+              <p>Send private photos and messages to a friend or group.</p>
+              <a class="btn">Send Message</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div class="switch-account" id="switch-account">
+      <div class="account-text">
+        <span>&nbsp;</span>
+        <h3>Switch Accounts</h3>
+        <div class="cross-icon" id="cross-icon" onclick="closeSwitchAccount()">
+          <svg
+            aria-label="Close"
+            class="_8-yf5"
+            color="#262626"
+            fill="#262626"
+            height="18"
+            role="img"
+            viewBox="0 0 24 24"
+            width="18"
+            style="user-select: auto"
+          >
+            <polyline
+              fill="none"
+              points="20.643 3.357 12 12 3.353 20.647"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="3"
+              style="user-select: auto"
+            ></polyline>
+            <line
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="3"
+              x1="20.649"
+              x2="3.354"
+              y1="20.649"
+              y2="3.354"
+              style="user-select: auto"
+            ></line>
+          </svg>
         </div>
       </div>
+      <div class="account-info">
+        <div class="account-right">
+          <svg
+            aria-label="Profile"
+            class="_8-yf5"
+            color="#262626"
+            fill="#262626"
+            height="40"
+            role="img"
+            viewBox="0 0 24 24"
+            width="40"
+          >
+            <circle
+              cx="12.004"
+              cy="12.004"
+              fill="none"
+              r="10.5"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-miterlimit="10"
+              stroke-width="1.2"
+            ></circle>
+            <path
+              d="M18.793 20.014a6.08 6.08 0 00-1.778-2.447 3.991 3.991 0 00-2.386-.791H9.38a3.994 3.994 0 00-2.386.791 6.09 6.09 0 00-1.779 2.447"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-miterlimit="10"
+              stroke-width="1.2"
+            ></path>
+            <circle
+              cx="12.006"
+              cy="9.718"
+              fill="none"
+              r="4.109"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-miterlimit="10"
+              stroke-width="1.2"
+            ></circle>
+          </svg>
+          <h3 class="acc-name"><%= name%></h3>
+        </div>
+        <div class="account-left">
+          <svg
+            aria-label="Checkmark filled icon"
+            class="_8-yf5"
+            color="#0095f6"
+            fill="#0095f6"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            width="24"
+            style="user-select: auto"
+          >
+            <path
+              d="M12.001.504a11.5 11.5 0 1011.5 11.5 11.513 11.513 0 00-11.5-11.5zm5.706 9.21l-6.5 6.495a1 1 0 01-1.414-.001l-3.5-3.503a1 1 0 111.414-1.414l2.794 2.796L16.293 8.3a1 1 0 011.414 1.415z"
+              style="user-select: auto"
+            ></path>
+          </svg>
+        </div>
+      </div>
+      <div class="existing-account">
+        <h3>Log into an Existing Account</h3>
+      </div>
+    </div>
 
-      <!-- Image Grid -->
-      <div class="image-grid" id="image-grid"></div>
-    </main>
+    <div class="new-Mssg" id="new-Mssg">
+      <div class="navigator">
+        <a class="close" id="close-newmssg" onclick="closeNewMessage()">
+          <svg
+            aria-label="Close"
+            class="_8-yf5"
+            color="#262626"
+            fill="#262626"
+            height="18"
+            role="img"
+            viewBox="0 0 24 24"
+            width="18"
+            style="user-select: auto"
+          >
+            <polyline
+              fill="none"
+              points="20.643 3.357 12 12 3.353 20.647"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="3"
+              style="user-select: auto"
+            ></polyline>
+            <line
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="3"
+              x1="20.649"
+              x2="3.354"
+              y1="20.649"
+              y2="3.354"
+              style="user-select: auto"
+            ></line>
+          </svg>
+        </a>
+        <div class="New_mssg">
+          <h4>New Message</h4>
+        </div>
+        <div class="next_mssg">
+          <h4>Next</h4>
+        </div>
+      </div>
+      <div class="SearchInput">
+        <div class="input_container">
+          <h5>To:</h5>
+          <input
+            type="text"
+            id="myInput"
+            onkeyup="myFunction()"
+            placeholder="Search..."
+            title="Type in a name"
+            autocomplete="off"
+          />
+        </div>
+      </div>
+      <div class="account-listss">
+        <div class="accounts_">
+          <ul id="myUL">
+            <h3>Suggested</h3>
+            <li>
+              <a href="#">
+                <div class="account-img">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Bill_Gates_2017_%28cropped%29.jpg/330px-Bill_Gates_2017_%28cropped%29.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="account-info">
+                  <h4>
+                    Bill Gates
+                    <img
+                      alt="verified"
+                      class="d2edcug0 sf5mxxl7"
+                      referrerpolicy="origin-when-cross-origin"
+                      src="https://static.xx.fbcdn.net/assets/?revision=1457375664716516&amp;name=ig-verifiedbadge-shared&amp;density=1"
+                      style="user-select: auto"
+                    />
+                  </h4></div
+              ></a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="account-img">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Elon_Musk_Royal_Society_%28crop2%29.jpg/330px-Elon_Musk_Royal_Society_%28crop2%29.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="account-info">
+                  <h4>
+                    Elon Musk
+                    <img
+                      alt="verified"
+                      class="d2edcug0 sf5mxxl7"
+                      referrerpolicy="origin-when-cross-origin"
+                      src="https://static.xx.fbcdn.net/assets/?revision=1457375664716516&amp;name=ig-verifiedbadge-shared&amp;density=1"
+                      style="user-select: auto"
+                    />
+                  </h4></div
+              ></a>
+            </li>
+
+            <li>
+              <a href="#">
+                <div class="account-img">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Jeff_Bezos_at_Amazon_Spheres_Grand_Opening_in_Seattle_-_2018_%2839074799225%29_%28cropped%29.jpg/638px-Jeff_Bezos_at_Amazon_Spheres_Grand_Opening_in_Seattle_-_2018_%2839074799225%29_%28cropped%29.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="account-info">
+                  <h4>
+                    Jeff Bezos
+                    <img
+                      alt="verified"
+                      class="d2edcug0 sf5mxxl7"
+                      referrerpolicy="origin-when-cross-origin"
+                      src="https://static.xx.fbcdn.net/assets/?revision=1457375664716516&amp;name=ig-verifiedbadge-shared&amp;density=1"
+                      style="user-select: auto"
+                    />
+                  </h4></div
+              ></a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="account-img">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Bernard_Arnault_%283%29_-_2017_%28cropped%29.jpg/688px-Bernard_Arnault_%283%29_-_2017_%28cropped%29.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="account-info">
+                  <h4>
+                    Bernard Arnault
+                    <img
+                      alt="verified"
+                      class="d2edcug0 sf5mxxl7"
+                      referrerpolicy="origin-when-cross-origin"
+                      src="https://static.xx.fbcdn.net/assets/?revision=1457375664716516&amp;name=ig-verifiedbadge-shared&amp;density=1"
+                      style="user-select: auto"
+                    />
+                  </h4></div
+              ></a>
+            </li>
+
+            <li>
+              <a href="#">
+                <div class="account-img">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Larry_Page_in_the_European_Parliament%2C_17.06.2009_%28cropped%29.jpg/330px-Larry_Page_in_the_European_Parliament%2C_17.06.2009_%28cropped%29.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="account-info">
+                  <h4>
+                    Larry Page
+                    <img
+                      alt="verified"
+                      class="d2edcug0 sf5mxxl7"
+                      referrerpolicy="origin-when-cross-origin"
+                      src="https://static.xx.fbcdn.net/assets/?revision=1457375664716516&amp;name=ig-verifiedbadge-shared&amp;density=1"
+                      style="user-select: auto"
+                    />
+                  </h4></div
+              ></a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="account-img">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Warren_Buffett_at_the_2015_SelectUSA_Investment_Summit_%28cropped%29.jpg/330px-Warren_Buffett_at_the_2015_SelectUSA_Investment_Summit_%28cropped%29.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="account-info">
+                  <h4>
+                    Warren Buffett
+                    <img
+                      alt="verified"
+                      class="d2edcug0 sf5mxxl7"
+                      referrerpolicy="origin-when-cross-origin"
+                      src="https://static.xx.fbcdn.net/assets/?revision=1457375664716516&amp;name=ig-verifiedbadge-shared&amp;density=1"
+                      style="user-select: auto"
+                    />
+                  </h4></div
+              ></a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="account-img">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Emma_Watson_2013.jpg/330px-Emma_Watson_2013.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="account-info">
+                  <h4>
+                    emma watson
+                    <img
+                      alt="verified"
+                      class="d2edcug0 sf5mxxl7"
+                      referrerpolicy="origin-when-cross-origin"
+                      src="https://static.xx.fbcdn.net/assets/?revision=1457375664716516&amp;name=ig-verifiedbadge-shared&amp;density=1"
+                      style="user-select: auto"
+                    />
+                  </h4></div
+              ></a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="account-img">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Kylie_Jenner_in_2021.jpg/330px-Kylie_Jenner_in_2021.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="account-info">
+                  <h4>
+                    Kylie Jenner
+                    <img
+                      alt="verified"
+                      class="d2edcug0 sf5mxxl7"
+                      referrerpolicy="origin-when-cross-origin"
+                      src="https://static.xx.fbcdn.net/assets/?revision=1457375664716516&amp;name=ig-verifiedbadge-shared&amp;density=1"
+                      style="user-select: auto"
+                    />
+                  </h4></div
+              ></a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="account-img">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Dwayne_Johnson_2014_%28cropped%29.jpg/330px-Dwayne_Johnson_2014_%28cropped%29.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="account-info">
+                  <h4>
+                    therock
+                    <img
+                      alt="verified"
+                      class="d2edcug0 sf5mxxl7"
+                      referrerpolicy="origin-when-cross-origin"
+                      src="https://static.xx.fbcdn.net/assets/?revision=1457375664716516&amp;name=ig-verifiedbadge-shared&amp;density=1"
+                      style="user-select: auto"
+                    />
+                  </h4></div
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

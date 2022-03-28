@@ -16,8 +16,8 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
   z-index: 11;
+  right: 0;
   background-color: #fff;
 }
 
@@ -78,6 +78,7 @@ header {
 }
 
 .dropdown-container {
+  z-index: 11;
   position: fixed;
   background: #fff;
   display: none;
@@ -87,7 +88,6 @@ header {
   box-shadow: 0 0 5px 1px rgb(0 0 0 / 10%);
   right: 19%;
   text-align: left;
-  z-index: 3;
 }
 .dropdown-container .dp {
   border-bottom: 2px solid rgb(219, 219, 219);
@@ -120,6 +120,7 @@ header {
 }
 .dropdown-container.active {
   display: block;
+  z-index: 9999999;
 }
 #profile_btn {
   cursor: pointer;
@@ -202,7 +203,7 @@ header {
 .left-section svg {
   transform: rotate(90deg);
 }
-.left-section .blue-dot {
+.blue-dot {
   height: 9px;
   width: 9px;
   border-radius: 50%;
@@ -345,279 +346,395 @@ header {
     display: none;
   }
 }
+
 main {
   width: 100%;
-  height: 200vh;
-
+  z-index: 3;
+  position: relative;
+  height: 100vh;
   background-color: #fafafa;
 }
-main .story-container {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
+
+section {
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-}
-main .story-container .story-section {
-  background: #fff;
-  background: rgba(var(--d87, 255, 255, 255), 1);
-  border: 1px solid #dbdbdb;
-  border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
-  border-radius: 3px;
-  margin-bottom: 24px;
-  margin-top: 0;
-  width: 40%;
-  position: relative;
-  display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: start;
-  top: 5.3rem;
-  scroll-behavior: smooth;
-  overflow-y: hidden;
-  z-index: 3;
+  flex-direction: column;
+
+  position: fixed;
+  top: 10.5%;
   left: 19%;
-  padding: 16px 0;
+  margin: auto;
 }
-main .story-container .story-section::-webkit-scrollbar {
-  width: 10px;
-  height: 0.1px;
+.grid {
+  display: flex;
+  gap: 0;
+  height: 40.5rem;
+  width: 73rem;
 }
-main .story-container .story-section::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-main .story-container .story-section::-webkit-scrollbar-thumb {
-  background: #888;
-}
-main .story-container .story-section .stories {
-  height: 85px;
-  outline: 0;
-}
-main .story-container .story-section .stories ul {
+.chat-list {
   display: flex;
   align-items: center;
-  justify-content: start;
-}
-main .story-container .story-section .stories ul li {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  flex-direction: column;
-  justify-content: start;
-}
-main .story-container .story-section .stories ul li .image {
-  width: 4.2rem;
-  height: 4.2rem;
-  margin: -1px 8px 0 8px;
-}
-main .story-container .story-section .stories ul li .image .image-border {
-  width: 100%;
-  box-shadow: inset 0 1px 0 #c93795;
-  border: 2px solid #f99f51;
   height: 100%;
-  padding: 2px;
-  border-radius: 50%;
-}
-main .story-container .story-section .stories ul li .image img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-}
-main .story-container .story-section ul li .story-author h4 {
-  color: #262626;
-  font-weight: 400;
-  font-size: 11px;
-  margin-top: 3px;
-}
-.POST_section {
-  display: flex;
-  align-items: center;
+  overflow: hidden;
+  width: 350px;
   justify-content: center;
   flex-direction: column;
-  position: relative;
-  top: 6%;
-  left: 19%;
-  width: 40%;
 }
-.POST_section .posts {
+.chat-list .account {
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin-bottom: 2rem;
-}
-.POST_section .posts .post-card {
-  display: flex;
-  align-items: left;
-  justify-content: center;
-  flex-direction: column;
-  border: 1px solid #dbdbdb;
-}
-.POST_section .posts .post-card .post-header {
-  display: flex;
-  border-bottom: 1px solid #dbdbdb;
-  align-items: center;
-  justify-content: space-between;
-  padding: 6px 15px;
-}
-.POST_section .posts .post-card .post-header .post-header-left {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  justify-content: center;
-}
-.POST_section
-  .posts
-  .post-card
-  .post-header
-  .post-header-left
-  .post-profile-img {
-  width: 2.6rem;
-  height: 2.6rem;
-}
-.POST_section
-  .posts
-  .post-card
-  .post-header
-  .post-header-left
-  .post-profile-img
-  .image-border {
-  width: 100%;
-  border: 2px solid #f99f51;
-  height: 100%;
-  padding: 2px;
-  border-radius: 50%;
-}
-.POST_section
-  .posts
-  .post-card
-  .post-header
-  .post-header-left
-  .post-profile-img
-  img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-}
-.POST_section
-  .posts
-  .post-card
-  .post-header
-  .post-header-left
-  .post-account-name
-  h4 {
-  color: #262626;
-  margin-left: 0.5rem;
-  font-size: 13px;
+  flex-wrap: wrap;
+  padding: 15px 5px;
+  padding-bottom: 40px;
+  font-size: 15px;
   font-weight: 500;
-}
-.POST_section .posts .post-card .post-image {
+  height: 60px;
   width: 100%;
-  cursor: pointer;
-  height: 100%;
+  z-index: 2;
+  color: #262626;
+  background-color: #fff;
+  border-top: 1px solid rgb(219, 219, 219);
+  border-left: 1px solid rgb(219, 219, 219);
+  border-right: 1px solid rgb(219, 219, 219);
+  justify-content: center;
 }
-.POST_section .posts .post-card .post-image img {
-  width: 100%;
-  height: 100%;
-}
-.POST_section .posts .post-card .navigation-icons {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row;
-}
-.POST_section .posts .post-card .navigation-icons .post-icons-left ul {
+.account-name {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0 0.7rem;
-  padding: 6px 11px;
+  cursor: pointer;
+  flex-direction: row;
+  padding: 0 6rem;
+}
+.account-name span {
+  margin-left: 5px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+.chat-list .account-name span svg {
+  transform: rotate(180deg);
+}
+.chat-list .account .edit {
+  margin-top: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.account-list {
+  display: flex;
+  color: #262626;
+  background-color: #fff;
+  border: 1px solid rgb(219, 219, 219);
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 40rem;
+  overflow-y: scroll;
+  width: 350px;
+}
+.account-list ul {
+  width: 100%;
+  height: 100%;
   list-style: none;
 }
-.POST_section .posts .post-card .navigation-icons .post-icons-left ul li {
-  cursor: pointer;
-}
-.POST_section .posts .post-card .navigation-icons .post-icons-right {
-  cursor: pointer;
-  padding: 6px 11px;
-}
-.POST_section .posts .post-card .likes {
-  display: flex;
-  cursor: pointer;
-  padding: 0px 11px;
-}
-.POST_section .posts .post-card .comments-count {
-  display: flex;
-  cursor: pointer;
-  padding: 0px 11px;
-}
-.POST_section .posts .post-card .days {
-  display: flex;
-  cursor: pointer;
-  padding: 0px 11px;
-}
-
-.POST_section .posts .post-card .days p {
-  color: #8e8e8e;
-  font-weight: 400;
-  font-size: 11px;
-}
-.POST_section .posts .post-card .comments-count p {
-  color: #8e8e8e;
-  font-weight: 400;
-  font-size: 13px;
-}
-.POST_section .posts .post-card .likes h4 {
-  color: #262626;
-  font-weight: 500;
-  font-size: 14px;
-}
-
-.POST_section .posts .post-card .description p {
-  color: #262626;
-  font-weight: 400;
-  font-size: 14px;
-  padding: 2px 105px 2px 11px;
-}
-.POST_section .posts .post-card .description p span {
-  color: #262626;
-  font-weight: 500;
-  font-size: 14px;
-}
-.POST_section .posts .post-card .post-footer {
+.account-list ul li {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 6px 15px;
-  border-top: 1px solid rgb(219, 219, 219);
+  justify-content: start;
+  cursor: pointer;
 }
-.POST_section .posts .post-card .post-footer .container-left {
+.account-list ul li:hover {
+  background-color: #f7f7f7;
+}
+.account-list ul li .account-img {
+  display: flex;
+  align-items: left;
+  margin: 15px;
+  justify-content: start;
+  width: 57px;
+  height: 55px;
+}
+.account-list ul li .account-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.account-list ul li .account-info h4 {
+  font-weight: 400;
+  color: #262626;
+  font-size: 13px;
+}
+.account-list ul li .account-info img {
+  width: 14px;
+  height: 14px;
+  object-fit: cover;
+  margin-top: 2px;
+}
+.account-list ul li .account-info p {
+  font-weight: 400;
+  color: #8e8e8e;
+  font-size: 12px;
+}
+.chat-inbox {
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  z-index: 10;
+  position: relative;
+  background-color: #fff;
+  border-top: 1px solid rgb(219, 219, 219);
+  border-right: 1px solid rgb(219, 219, 219);
+  border-bottom: 1px solid rgb(219, 219, 219);
+  width: 50%;
+}
+.chat-inbox .Send-mssg {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0 0.5rem;
+  flex-direction: column;
 }
-.POST_section .posts .post-card .post-footer .container-left form input {
-  width: 31.2rem;
-  border: none;
-  outline: none;
-  background-color: transparent;
-  height: 2rem;
+.chat-inbox .Send-mssg svg {
+  margin-bottom: 10px;
 }
-.POST_section .posts .post-card .post-footer .post-comment {
+.chat-inbox .Send-mssg h3 {
+  color: #262626;
+  font-weight: 100;
+  font-size: 23px;
+  margin-bottom: 10px;
+}
+.chat-inbox .Send-mssg p {
+  color: #8e8e8e;
+  font-weight: 100;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.chat-inbox .Send-mssg .btn {
+  background-color: #0095f6;
+  border-radius: 4px;
+  color: #fff;
+  margin: 10px 0;
+  padding: 5px 9px;
+  font-size: 14px;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+.switch-account {
+  width: 33rem;
+  position: fixed;
+  top: 33%;
+  z-index: 99999999;
+  width: 400px;
+  display: none;
+  border-radius: 16px;
+  max-height: calc(100% - 40px);
+  left: 38%;
+}
+.switch-account .account-text {
+  display: flex;
+  background-color: #fff;
+  justify-content: space-between;
+  flex-direction: row;
+  border-top-right-radius: 16px;
+  border-top-left-radius: 16px;
+  height: 43px;
+  width: 100%;
+  border-bottom: 1px solid #dbdbdb;
+  align-items: center;
+}
+.switch-account .account-text h3 {
+  color: #262626;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 500;
+}
+.switch-account .account-text .cross-icon {
+  position: relative;
+  cursor: pointer;
+  right: 22px;
+  top: 4px;
+}
+.switch-account .account-info {
+  background-color: #fff;
+  height: 10rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.switch-account .account-info .account-right {
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  justify-content: center;
+}
+.switch-account .account-info .account-right h3 {
+  font-weight: 500;
+  color: #262626;
+  font-size: 15px;
+  padding: 0px 7px;
   cursor: pointer;
 }
-.POST_section .posts .post-card .post-footer .post-comment h3 {
+.switch-account .account-info .account-left {
+  padding: 20px 18px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  justify-content: center;
+}
+.existing-account {
+  display: flex;
+  background-color: #fff;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  border-top: 1px solid #dbdbdb;
+  align-items: center;
+  justify-content: center;
+}
+.existing-account h3 {
+  padding: 10px 0;
   color: #0095f6;
+  font-size: 15px;
+  cursor: pointer;
   font-weight: 500;
+}
+.new-Mssg {
+  width: 33rem;
+  position: fixed;
+  top: 15%;
+  z-index: 99999999;
+  width: 380px;
+  display: none;
+  border-radius: 16px;
+
+  max-height: calc(100% - 40px);
+  left: 38%;
+}
+.new-Mssg .navigator {
+  padding: 10px 15px;
+  padding-top: 15px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top-right-radius: 16px;
+  border-top-left-radius: 16px;
+  height: 43px;
+  flex-direction: row;
+  width: 100%;
+  border-bottom: 1px solid #dbdbdb;
+}
+.new-Mssg .navigator .close {
+  cursor: pointer;
+}
+
+.new-Mssg .navigator .New_mssg h4 {
+  color: #262626;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 500;
+}
+.new-Mssg .navigator .next_mssg h4 {
+  color: #0095f6;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 500;
+}
+.new-Mssg .SearchInput {
+  width: 100%;
+  background-color: #fff;
+}
+.new-Mssg .SearchInput .input_container {
+  padding: 12px 12px;
+  display: flex;
+  align-items: center;
+  overflow-y: scroll;
+  justify-content: start;
+  border-bottom: 1px solid #dbdbdb;
+}
+.new-Mssg .SearchInput .input_container h5 {
+  white-space: pre;
+  color: #262626;
+  font-weight: 500;
+  padding-right: 15px;
+  font-size: 17px;
+}
+.new-Mssg .SearchInput .input_container input {
+  padding: 8px 0;
+  width: 275px;
+  border: none;
+  outline: none;
+  background-color: #fff;
+}
+.new-Mssg .SearchInput .input_container input::placeholder {
+  color: rgb(192, 192, 192);
   font-size: 14px;
+  font-weight: 400;
+}
+.new-Mssg .accounts_ {
+  background-color: #fff;
+}
+.new-Mssg .accounts_ ul h3 {
+  color: #262626;
+  font-weight: 500;
+  padding: 8px 10px;
+  font-size: 15px;
+}
+.new-Mssg .accounts_ ul {
+  display: flex;
+  align-items: start;
+  overflow-y: scroll;
+  flex-direction: column;
+  height: 25rem;
+  justify-content: start;
+}
+.new-Mssg .accounts_ ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+  text-decoration: none;
+  cursor: pointer;
+}
+.new-Mssg .accounts_ ul li {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+
+  cursor: pointer;
+}
+.new-Mssg .accounts_ ul li:hover {
+  background: rgb(243, 243, 243);
+}
+.new-Mssg .accounts_ ul li .account-img {
+  display: flex;
+  align-items: left;
+  margin: 15px;
+  justify-content: start;
+  width: 57px;
+  height: 55px;
+}
+.new-Mssg .accounts_ ul li .account-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.new-Mssg .account-info h4 {
+  font-weight: 400;
+  color: #262626;
+  font-size: 13px;
+}
+.new-Mssg .account-info h4 img {
+  width: 16px;
+  height: 16px;
+  object-fit: cover;
+  margin-top: 10px;
+}
+.new-Mssg .account-listss .accounts_ {
+  border-bottom-right-radius: 16px !important;
+  border-bottom-left-radius: 16px;
 }

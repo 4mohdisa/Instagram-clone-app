@@ -24,7 +24,7 @@ header {
   display: flex;
   align-items: center;
 
-  padding: 13px 17.7rem 2px 17.7rem;
+  padding: 13px 17.7rem 2px 18rem;
 
   border-bottom: 1px solid rgb(219, 219, 219);
   justify-content: space-between;
@@ -343,7 +343,43 @@ main {
   flex-direction: column;
   background-color: #fafafa;
 }
-main .grid {
+.loader,
+.error {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.loader svg {
+  animation: loading 0.6s linear infinite;
+}
+@keyframes loading {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+.loader img,
+.error__msg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.error__msg {
+  color: black;
+  font-size: 28px;
+  text-align: center;
+  max-width: 600px;
+}
+
+.image-grid {
   margin-top: 3.4rem;
   display: grid;
   box-sizing: content-box;
@@ -357,24 +393,50 @@ main .grid {
   align-content: start;
   align-items: start;
 }
-main .grid img {
+
+.image-grid img {
   width: 100%;
   height: 100%;
   display: block;
   object-fit: cover;
+  animation: fadeIn 1s ease-out;
 }
-main .grid img:nth-of-type(1) {
+
+.image-grid .landscape {
   grid-column-end: span 2;
 }
-main .grid img:nth-of-type(11) {
-  grid-column-end: span 2;
+
+/* Media Query: Mobile (up to 464px)*/
+@media only screen and (max-width: 29em) {
+  h1,
+  .error__msg {
+    font-size: 25px;
+  }
+
+  .image-grid {
+    margin: 10px;
+    grid-template-columns: 100%;
+    column-gap: 0;
+    row-gap: 10px;
+  }
 }
-main .grid img:nth-of-type(5) {
-  grid-column-end: span 2;
+
+/* Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-main .grid img:nth-of-type(9) {
-  grid-column-end: span 2;
-}
-main .grid img:nth-of-type(17) {
-  grid-column-end: span 2;
+@media only screen and (max-width: 768px) {
+  .navbar {
+    padding: 0 0;
+  }
+  .navigation-search {
+    display: none;
+  }
 }

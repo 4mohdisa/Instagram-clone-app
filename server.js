@@ -41,6 +41,9 @@ app.get("/", checkAuthenticated, (req, res) => {
 app.get("/login", checkNotAuthenticated, (req, res) => {
   res.render("login.ejs");
 });
+app.get("/inbox", checkAuthenticated, (req, res) => {
+  res.render("inbox.ejs", { name: req.user.name });
+});
 
 app.post(
   "/login",

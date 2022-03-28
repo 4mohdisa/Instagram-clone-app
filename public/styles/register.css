@@ -251,13 +251,14 @@ footer {
   padding: 10px 0;
 }
 .header .button-container {
-  margin: 11px 40px;
+  margin: 11px 30px;
   width: 80%;
+  text-align: center;
 }
 .header .button-container a {
   cursor: pointer;
   width: 100%;
-  padding: 6px 58px;
+  padding: 6px 50px;
   background: #3897f0;
   border: 1px solid #3897f0;
   color: #fff;
